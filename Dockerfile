@@ -1,21 +1,28 @@
 FROM jupyter/tensorflow-notebook:latest
 
-# Windows Render related
+# Install OS dependencies.
 USER root
-RUN apt-get update -y && \
-    apt-get install -y xvfb && \
-    apt-get install -y python-opengl
 
-# Optional, needed for some environments
-RUN apt-get install -y cmake && \
-    apt-get install -y zlib1g zlib1g-dev
+RUN apt-get update -y && apt-get install -y \
+  cmake \
+  python-opengl \
+  xvfb \
+  zlib1g \
+  zlib1g-dev
 
+# Install Python dependencies.
 USER ${NB_USER}
 
-RUN pip install \
-        gym \
-        pyvirtualdisplay
+RUN conda install \
+  swig
 
-# Needed for some environments
-RUN conda install swig
-RUN pip install box2d-py atari_py pystan
+RUN pip3 install \
+  atari_py \
+  box2d-py \
+  gym \
+  gym[atari] \
+  h5py \
+  keras-rl \
+  Pillow \
+  pystan \
+  pyvirtualdisplay
