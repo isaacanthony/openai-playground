@@ -22,7 +22,7 @@ RUN pip3 install \
   gym \
   gym[atari] \
   h5py \
-  keras-rl \
+  keras-rl2 \
   Pillow \
   pystan \
   pyvirtualdisplay
