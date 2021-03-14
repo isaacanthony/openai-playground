@@ -21,6 +21,7 @@ RUN pip3 install \
   box2d-py \
   gym \
   gym[atari] \
+  gym-notebook-wrapper \
   h5py \
   keras-rl2 \
   Pillow \
