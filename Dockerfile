@@ -14,16 +14,14 @@ RUN apt-get update -y && apt-get install -y \
 USER ${NB_USER}
 
 RUN conda install \
-  swig
+  swig==4.0.2
 
 RUN pip3 install \
-  atari_py \
-  box2d-py \
-  gym \
-  gym[atari] \
-  gym-notebook-wrapper \
-  h5py \
-  keras-rl2 \
-  Pillow \
-  pystan \
-  pyvirtualdisplay
+  gym[nomujoco]==0.18.0 \
+  gym-notebook-wrapper==1.2.4 \
+  h5py==2.10.0 \
+  keras-rl2==1.0.4 \
+  Pillow==7.2.0 \
+  pyglet==1.5.0 \
+  pystan==2.19.1.1 \
+  tensorflow==2.4.1
