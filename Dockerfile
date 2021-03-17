@@ -6,6 +6,7 @@ USER root
 RUN apt-get update -y && apt-get install -y \
   cmake \
   python-opengl \
+  python-pygame \
   xvfb \
   zlib1g \
   zlib1g-dev
